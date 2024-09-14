@@ -9,13 +9,13 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="font-poppinsSemibold flex h-fit w-full items-center justify-center bg-transparent pt-[88px]"
+      className="flex h-fit w-full items-center justify-center bg-transparent pt-[88px] font-poppinsSemibold"
     >
-      <div className="py-[60px]">
-        <h1 className="mb-4 flex justify-center gap-x-4 text-[59.2px]">
+      <div className="py-[60px] esm:px-5 esm:py-10">
+        <h1 className="mb-4 flex justify-center gap-x-4 text-[59.2px] md:text-[45px] xl:text-[59px] esm:text-[30px]">
           I'm <span className="text-[#FF014F]"> Hamim Hossain</span>
         </h1>
-        <div className="mb-4 flex justify-center">
+        <div className="mb-4 flex justify-center md:text-[45px] xl:text-[59px] esm:text-[27px]">
           <TypeAnimation
             sequence={[
               "Frontend Developer",
@@ -27,7 +27,7 @@ const Home = () => {
             ]}
             wrapper="span"
             speed={5}
-            style={{ fontSize: "3.7em", display: "inline-block" }}
+            style={{ fontSize: "", display: "inline-block" }}
             repeat={Infinity}
           />
         </div>
@@ -51,15 +51,15 @@ const Home = () => {
             <FaStackOverflow className="text-3xl text-orange-500 shadow-xl hover:text-orange-700" />
           </a>
         </div>
-        <div className="flex justify-center gap-x-10">
+        <div className="flex items-center justify-center gap-x-10">
           <a
-            className="rounded-lg border-2 border-slate-900 bg-slate-900 px-6 py-3 text-white shadow-2xl"
+            className="rounded-lg border-2 border-slate-900 bg-slate-900 px-6 py-3 text-white shadow-2xl xl:px-6 xl:py-3 xl:text-[18px] esm:px-2 esm:py-1 esm:text-[14px]"
             href="#work"
           >
             View Projects
           </a>
           <a
-            className="rounded-lg border-2 border-slate-900 bg-transparent px-6 py-[12px] text-slate-900 shadow-xl transition-all duration-300 ease-in-out hover:bg-slate-900 hover:text-white"
+            className="rounded-lg border-2 border-slate-900 bg-transparent px-6 py-[12px] text-slate-900 shadow-xl transition-all duration-300 ease-in-out hover:bg-slate-900 hover:text-white xl:px-6 xl:py-3 xl:text-[18px] esm:px-2 esm:py-1 esm:text-[14px]"
             href="#about"
           >
             About Me
