@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Services from "./Pages/Service/Services";
 
 const App = () => {
   return (
@@ -9,6 +12,7 @@ const App = () => {
       <Navbar />
       <Home />
       <About />
+      <Services />
     </main>
   );
 };
