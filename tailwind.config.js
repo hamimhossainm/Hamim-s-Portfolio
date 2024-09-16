@@ -3,6 +3,9 @@ export default {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        bannerImg: "url('/public/images/bg.jpg')",
+      },
       screens: {
         esm: "400px",
         // => @media (min-width: 400px) { ... }

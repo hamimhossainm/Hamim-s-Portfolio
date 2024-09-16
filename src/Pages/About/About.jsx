@@ -1,11 +1,20 @@
 import React from "react";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 
 const About = () => {
+  const aboutItems = [
+    { id: 1, path: "/", name: "Biography" },
+    { id: 2, path: "/skills", name: "Skills" },
+    { id: 3, path: "/education", name: "Education" },
+    { id: 4, path: "/experience", name: "Experience" },
+  ];
+  const location = useLocation();
+
   return (
     <section
       id="about"
@@ -22,56 +31,34 @@ const About = () => {
         </div>
         <div className="w-[60%] esm:w-full md:w-full lg:w-[60%]">
           <div className="esm:full mb-20 esm:flex esm:justify-center lg:justify-start">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                `mr-20 rounded-lg bg-transparent px-3 py-2 font-bold shadow-xl esm:ml-4 esm:mr-8 esm:px-2 esm:py-1 esm:text-[12px] md:text-[18px] ${
-                  isActive ? "border-b-2 border-red-600 text-[#FF014F]" : ""
-                }`
-              }
-            >
-              Biography
-            </NavLink>
-            <NavLink
-              to="/skills"
-              className={({ isActive }) =>
-                `mr-20 rounded-lg bg-transparent px-3 py-2 font-bold shadow-xl esm:mr-8 esm:px-2 esm:py-1 esm:text-[12px] md:text-[18px] ${
-                  isActive ? "border-b-2 border-red-600 text-[#FF014F]" : ""
-                }`
-              }
-            >
-              Skills
-            </NavLink>
-            <NavLink
-              to="/education"
-              className={({ isActive }) =>
-                `mr-20 rounded-lg bg-transparent px-3 py-2 font-bold shadow-xl esm:mr-8 esm:px-2 esm:py-1 esm:text-[12px] md:text-[18px] ${
-                  isActive ? "border-b-2 border-red-600 text-[#FF014F]" : ""
-                }`
-              }
-            >
-              Education
-            </NavLink>
-            <NavLink
-              to="/experience"
-              className={({ isActive }) =>
-                `mr-20 rounded-lg bg-transparent px-3 py-2 font-bold shadow-xl esm:mr-8 esm:px-2 esm:py-1 esm:text-[12px] md:text-[18px] ${
-                  isActive ? "border-b-2 border-red-600 text-[#FF014F]" : ""
-                }`
-              }
-            >
-              Experience
-            </NavLink>
+            {aboutItems.map((item) => (
+              <NavLink
+                to={item.path}
+                end
+                className={({ isActive }) =>
+                  `mr-20 rounded-lg bg-transparent px-3 py-2 font-bold shadow-xl esm:ml-4 esm:mr-8 esm:px-2 esm:py-1 esm:text-[10px] md:text-[16px] lg:text-[18px] xl:text-[20px] ${
+                    isActive ? "border-b-2 border-red-600 text-[#FF014F]" : ""
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
           </div>
 
           <div>
-            <Routes>
-              <Route path="/" element={<AboutMe />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/education" element={<Education />} />
-              <Route path="/experience" element={<Experience />} />
-            </Routes>
+            <TransitionGroup>
+              <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                <div>
+                  <Routes location={location}>
+                    <Route path="/" element={<AboutMe />} />
+                    <Route path="/skills" element={<Skills />} />
+                    <Route path="/education" element={<Education />} />
+                    <Route path="/experience" element={<Experience />} />
+                  </Routes>
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
           </div>
         </div>
         <div className="w-[30%] esm:hidden lg:block lg:w-[30%]">
@@ -86,12 +73,4 @@ const About = () => {
   );
 };
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <About />
-    </BrowserRouter>
-  );
-};
-
-export default App;
+export default About;

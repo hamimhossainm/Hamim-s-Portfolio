@@ -9,7 +9,8 @@ const Navbar = () => {
     { sl: 2, id: "#about", name: "About" },
     { sl: 3, id: "#service", name: "Services" },
     { sl: 4, id: "#work", name: "Projects" },
-    { sl: 5, id: "#contact", name: "Contact" },
+    { sl: 5, id: "#testimonial", name: "Testimonials" },
+    { sl: 6, id: "#contact", name: "Contact" },
   ];
 
   const [hovered, setHovered] = useState(null);
@@ -53,7 +54,7 @@ const Navbar = () => {
           open ? "" : "shadow-md"
         }`}
       >
-        <div className="flex h-full w-full items-center justify-between px-20 md:px-14 esm:px-10">
+        <div className="flex h-full w-full items-center justify-between px-20 esm:px-10 md:px-14">
           <div className="">
             <img
               className="esm:h-22[88px] w-[200px] esm:w-[200px]"
@@ -64,7 +65,7 @@ const Navbar = () => {
 
           <div
             onClick={menu}
-            className="hidden md:hidden esm:block esm:transition-all esm:duration-300 esm:ease-out"
+            className="hidden esm:block esm:transition-all esm:duration-300 esm:ease-out md:hidden"
           >
             {open ? (
               <FaRegWindowClose className="esm:text-3xl" />
@@ -73,7 +74,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <div className="text-4 md: flex gap-x-12 font-semibold md:flex md:gap-x-8 md:text-[16px] esm:hidden">
+          <div className="text-4 md: flex gap-x-12 font-semibold esm:hidden md:flex md:gap-x-8 md:text-[16px] lg:text-[18px] xl:text-[20px]">
             {navItems.map((item) => (
               <a
                 key={item.sl}
@@ -86,7 +87,7 @@ const Navbar = () => {
               >
                 {item.name}
                 <div
-                  className={`absolute bottom-[-3px] left-0 h-[2px] bg-[#FF014F] transition-all duration-700 ease-in-out md:block esm:hidden ${
+                  className={`absolute bottom-[-3px] left-0 h-[2px] bg-[#FF014F] transition-all duration-700 ease-in-out esm:hidden md:block ${
                     hovered === item.sl || activeSection === item.sl
                       ? "w-2/4"
                       : "w-1 opacity-0"
@@ -98,7 +99,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`absolute hidden w-full -translate-x-full bg-transparent pt-[88px] text-xl font-semibold shadow-md backdrop-blur-md transition-all duration-700 ease-in-out md:hidden esm:block ${
+        className={`absolute hidden w-full -translate-x-full bg-transparent pt-[88px] text-xl font-semibold shadow-md backdrop-blur-md transition-all duration-700 ease-in-out esm:block md:hidden ${
           open ? "translate-x-0" : ""
         } ${close ? "-translate-x-full" : ""}`}
       >
@@ -107,6 +108,7 @@ const Navbar = () => {
           <a href="#about">About</a>
           <a href="#service">Services</a>
           <a href="#work">Projects</a>
+          <a href="#testimonial">Testimonials</a>
           <a href="#contact">Contact</a>
           <button>
             <DiAptana />

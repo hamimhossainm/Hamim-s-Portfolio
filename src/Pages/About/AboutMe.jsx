@@ -8,11 +8,8 @@ const AboutMe = () => {
         Hello, This is Hamim{" "}
       </p>
       <p className="mb-14 text-justify leading-loose text-slate-700 esm:mb-10 esm:text-[14px] esm:leading-relaxed lg:text-lg lg:leading-loose">
-        Experienced Frontend Developer with a strong background in creating
-        responsive and user-friendly web applications. Proven success in
-        optimizing website performance, developing intuitive user interfaces,
-        and collaborating with crossfunctional teams to drive project success.
-        Skilled in{" "}
+        Frontend Developer with expertise in responsive web applications,
+        performance optimization, and intuitive UI design. Skilled in{" "}
         <span className="font-poppinsSemibold text-[#DD4B25]">HTML5</span>,{" "}
         <span className="font-poppinsSemibold text-[#254BDD]">CSS3</span>,{" "}
         <span className="font-poppinsSemibold text-[#cebb2f]">JavaScript</span>,
@@ -23,9 +20,9 @@ const AboutMe = () => {
         <span className="font-poppinsSemibold text-[#36B7F0]">
           Tailwind CSS
         </span>{" "}
-        . Excellent problem-solving and communication skills. Committed to
-        delivering high-quality code and enhancing user experience to achieve
-        organizational goals and foster innovation.
+        . Strong problem-solving and communication skills, dedicated to
+        delivering high-quality code and enhancing user experience to drive
+        innovation.
       </p>
 
       <a
